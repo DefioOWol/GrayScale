@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tests &#8212; GrayScale 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="grayscale_example.html" />
+    <link rel="prev" title="GrayScale" href="grayscale.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="grayscale_example.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="grayscale.html" title="GrayScale"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >GrayScale-project</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="grayscale.html" accesskey="U">GrayScale</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tests</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h1>
+<section id="module-grayscale.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grayscale.tests" title="Permalink to this headline">¶</a></h2>
+<p>Tests package initialization module.</p>
+<p>The tests package is designed to run tests of the functions of the
+main module of the GrayScale package.</p>
+<p>This package can be run from the console, then the execution of
+all tests located in this package will be started.</p>
+<p>The modules of this package import pytest and unittest modules and
+functions from os, pathlib and doctest modules.</p>
+<p>Content:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Modules:</dt><dd><ul class="simple">
+<li><p>__init__ - package initialization</p></li>
+<li><p>__main__ - running all package tests</p></li>
+<li><p>doctests - doctest tests</p></li>
+<li><p>test_pytest - pytest tests</p></li>
+<li><p>test_unittest - unittest tests</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-grayscale.tests.__main__">
+<span id="main"></span><h2>Main<a class="headerlink" href="#module-grayscale.tests.__main__" title="Permalink to this headline">¶</a></h2>
+<p>__main__.</p>
+<p>Tests package module designed to start execution
+all tests that are in this package.</p>
+<dl class="simple">
+<dt>Imports:</dt><dd><ul class="simple">
+<li><p>from pathlib import Path - to extract the path to the file</p></li>
+<li><p>from os import system - to run tests</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="module-grayscale.tests.doctests">
+<span id="doctest-tests"></span><h2>Doctest tests<a class="headerlink" href="#module-grayscale.tests.doctests" title="Permalink to this headline">¶</a></h2>
+<p>doctests.</p>
+<p>Tests package module containing doctest tests.</p>
+<dl class="simple">
+<dt>Imports:</dt><dd><ul class="simple">
+<li><p>from doctest import testmod - to run tests</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">grayscale.shades</span> <span class="kn">import</span> <span class="n">is_gray</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#F0F0F0&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#808080&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#171717&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#231223&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#444444&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">grayscale.shades</span> <span class="kn">import</span> <span class="n">to_gray</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#F0F0F0&#39;</span><span class="p">)</span>
+<span class="go">(0, 0, 0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#231223&#39;</span><span class="p">)</span>
+<span class="go">(0, 17, 0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#424536&#39;</span><span class="p">)</span>
+<span class="go">(0, -3, 12)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="go">(-1, -1, -1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="go">(1, 1, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">)</span>
+<span class="go">(1, -254, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#09FBEC&#39;</span><span class="p">)</span>
+<span class="go">(227, -15, 0)</span>
+</pre></div>
+</div>
+</section>
+<section id="module-grayscale.tests.test_pytest">
+<span id="pytest-tests"></span><h2>PyTest tests<a class="headerlink" href="#module-grayscale.tests.test_pytest" title="Permalink to this headline">¶</a></h2>
+<p>test_pytest.</p>
+<p>A module of the tests package containing pytest tests of the
+is_gray and to_gray functions.</p>
+<dl class="simple">
+<dt>Imports:</dt><dd><ul class="simple">
+<li><p>import pytest - to implement tests</p></li>
+<li><p>from grayscale.shades import is_gray, to_gray - tested functions</p></li>
+</ul>
+</dd>
+<dt>Functions:</dt><dd><ul class="simple">
+<li><p>test_is_gray(color, result) - testing the is_gray function</p></li>
+<li><dl class="simple">
+<dt>test_is_gray_exceptions(color, exception) - testing the is_gray</dt><dd><p>function for exceptions</p>
+</dd>
+</dl>
+</li>
+<li><p>test_to_gray(color, result) - testing the to_gray function</p></li>
+<li><dl class="simple">
+<dt>test_to_gray_exceptions(color, exception) - testing the to_gray</dt><dd><p>function for exceptions</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.tests.test_pytest.test_is_gray">
+<span class="sig-prename descclassname"><span class="pre">grayscale.tests.test_pytest.</span></span><span class="sig-name descname"><span class="pre">test_is_gray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_pytest.test_is_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the is_gray function.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>color - color code</p></li>
+<li><p>result - expected result</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.tests.test_pytest.test_is_gray_exceptions">
+<span class="sig-prename descclassname"><span class="pre">grayscale.tests.test_pytest.</span></span><span class="sig-name descname"><span class="pre">test_is_gray_exceptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_pytest.test_is_gray_exceptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the is_gray function for exceptions.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>color - color code</p></li>
+<li><p>exception - expected exception</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.tests.test_pytest.test_to_gray">
+<span class="sig-prename descclassname"><span class="pre">grayscale.tests.test_pytest.</span></span><span class="sig-name descname"><span class="pre">test_to_gray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_pytest.test_to_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the to_gray function.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>color - color code</p></li>
+<li><p>result - expected result</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.tests.test_pytest.test_to_gray_exceptions">
+<span class="sig-prename descclassname"><span class="pre">grayscale.tests.test_pytest.</span></span><span class="sig-name descname"><span class="pre">test_to_gray_exceptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_pytest.test_to_gray_exceptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the to_gray function for exceptions.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>color - color code</p></li>
+<li><p>exception - expected exception</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-grayscale.tests.test_unittest">
+<span id="unittest-tests"></span><h2>Unittest tests<a class="headerlink" href="#module-grayscale.tests.test_unittest" title="Permalink to this headline">¶</a></h2>
+<p>test_unittest.</p>
+<p>A module of the tests package containing unittest tests of the
+is_gray and to_gray functions.</p>
+<dl class="simple">
+<dt>Imports:</dt><dd><ul class="simple">
+<li><p>import unittest - to implement tests</p></li>
+<li><p>from grayscale.shades import is_gray, to_gray - tested functions</p></li>
+</ul>
+</dd>
+<dt>Classes:</dt><dd><ul class="simple">
+<li><p>ShadesTest - unittest class of tests</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="grayscale.tests.test_unittest.ShadesTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">grayscale.tests.test_unittest.</span></span><span class="sig-name descname"><span class="pre">ShadesTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_unittest.ShadesTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Unittest class of tests.</p>
+<dl class="simple">
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>test_is_gray() - testing the is_gray function</p></li>
+<li><dl class="simple">
+<dt>test_is_gray_exception() - testing the is_gray function</dt><dd><p>for exceptions</p>
+</dd>
+</dl>
+</li>
+<li><p>test_to_gray() - testing the to_gray function</p></li>
+<li><dl class="simple">
+<dt>test_to_gray_exception() - testing the to_gray function</dt><dd><p>for exceptions</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="grayscale.tests.test_unittest.ShadesTest.test_is_gray">
+<span class="sig-name descname"><span class="pre">test_is_gray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_unittest.ShadesTest.test_is_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the is_gray function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grayscale.tests.test_unittest.ShadesTest.test_is_gray_exception">
+<span class="sig-name descname"><span class="pre">test_is_gray_exception</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_unittest.ShadesTest.test_is_gray_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the is_gray function for exceptions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grayscale.tests.test_unittest.ShadesTest.test_to_gray">
+<span class="sig-name descname"><span class="pre">test_to_gray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_unittest.ShadesTest.test_to_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the to_gray function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="grayscale.tests.test_unittest.ShadesTest.test_to_gray_exception">
+<span class="sig-name descname"><span class="pre">test_to_gray_exception</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.tests.test_unittest.ShadesTest.test_to_gray_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testing the to_gray function for exceptions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tests</a><ul>
+<li><a class="reference internal" href="#module-grayscale.tests">Module contents</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-grayscale.tests.__main__">Main</a></li>
+<li><a class="reference internal" href="#module-grayscale.tests.doctests">Doctest tests</a></li>
+<li><a class="reference internal" href="#module-grayscale.tests.test_pytest">PyTest tests</a></li>
+<li><a class="reference internal" href="#module-grayscale.tests.test_unittest">Unittest tests</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="grayscale.html"
+                        title="previous chapter">GrayScale</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="grayscale_example.html"
+                        title="next chapter">Examples</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/grayscale.tests.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="grayscale_example.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="grayscale.html" title="GrayScale"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >GrayScale-project</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="grayscale.html" >GrayScale</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tests</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vyacheslav.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+    </div>
+  </body>
+</html>
