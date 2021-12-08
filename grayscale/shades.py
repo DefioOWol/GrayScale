@@ -1,8 +1,25 @@
-"""Summary."""
+"""shades.
+
+The main module of the GrayScale package, containing
+functions for working with grayscale.
+
+Functions:
+    - is_gray(hex) - grayscale check
+    - to_gray(hex) - casting to a shade of gray
+
+"""
 
 
 def is_gray(hex: str) -> bool:
-    """Summary."""
+    """Check if hex is a grayscale.
+
+    Arguments:
+        - hex: str - color code in the 16-digit number system, format:
+            #HHHHHH, where H is the digit of the 16-digit number system
+
+    Returns True or False depending on the result.
+
+    """
     if hex[0] != '#':
         raise ValueError('the color code should start with #')
     if len(hex) != 7:
@@ -12,7 +29,18 @@ def is_gray(hex: str) -> bool:
 
 
 def to_gray(hex: str) -> tuple[int, int, int]:
-    """Summary."""
+    """Define the values to be added to hex.
+
+    Determines which values need to be added to
+    the hex components so that it becomes a shade of gray.
+
+    Arguments:
+        - hex: str - color code in the 16-digit number system, format:
+            #HHHHHH, where H is the digit of the 16-digit number system
+
+    Returns a tuple of received values in the 10-digit number system.
+
+    """
     if hex[0] != '#':
         raise ValueError('the color code should start with #')
     if len(hex) != 7:

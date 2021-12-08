@@ -1,4 +1,21 @@
-"""Summary."""
+"""test_pytest.
+
+A module of the tests package containing pytest tests of the
+is_gray and to_gray functions.
+
+Imports:
+    - import pytest - to implement tests
+    - from grayscale.shades import is_gray, to_gray - tested functions
+
+Functions:
+    - test_is_gray(color, result) - testing the is_gray function
+    - test_is_gray_exceptions(color, exception) - testing the is_gray
+        function for exceptions
+    - test_to_gray(color, result) - testing the to_gray function
+    - test_to_gray_exceptions(color, exception) - testing the to_gray
+        function for exceptions
+
+"""
 import pytest
 from grayscale.shades import is_gray, to_gray
 
@@ -8,7 +25,13 @@ from grayscale.shades import is_gray, to_gray
     ('#000000', False), ('#FFFFFF', False), ('#172486', False)
 ])
 def test_is_gray(color, result):
-    """Summary."""
+    """Testing the is_gray function.
+
+    Arguments:
+        - color - color code
+        - result - expected result
+
+    """
     assert is_gray(color) == result
 
 
@@ -18,7 +41,13 @@ def test_is_gray(color, result):
     ('808080', ValueError), ('#80808', ValueError)
 ])
 def test_is_gray_exceptions(color, exception):
-    """Summary."""
+    """Testing the is_gray function for exceptions.
+
+    Arguments:
+        - color - color code
+        - exception - expected exception
+
+    """
     with pytest.raises(exception):
         is_gray(color)
 
@@ -29,7 +58,13 @@ def test_is_gray_exceptions(color, exception):
     ('#CCCCCC', (0, 0, 0))
 ])
 def test_to_gray(color, result):
-    """Summary."""
+    """Testing the to_gray function.
+
+    Arguments:
+        - color - color code
+        - result - expected result
+
+    """
     assert to_gray(color) == result
 
 
@@ -39,6 +74,12 @@ def test_to_gray(color, result):
     ('325427', ValueError), ('#AFF0BC4', ValueError)
 ])
 def test_to_gray_exceptions(color, exception):
-    """Summary."""
+    """Testing the to_gray function for exceptions.
+
+    Arguments:
+        - color - color code
+        - exception - expected exception
+
+    """
     with pytest.raises(exception):
         to_gray(color)

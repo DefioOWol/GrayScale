@@ -1,4 +1,13 @@
-"""Summary."""
+"""__main__.
+
+Tests package module designed to start execution
+all tests that are in this package.
+
+Imports:
+    - from pathlib import Path - to extract the path to the file
+    - from os import system - to run tests
+
+"""
 from pathlib import Path
 from os import system
 

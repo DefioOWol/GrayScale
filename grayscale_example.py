@@ -1,10 +1,33 @@
-"""Summary."""
+"""grayscale_example.
+
+The module of the GrayScale package containing examples of the
+functions of the main module.
+
+Each example displays the main executable code and its result.
+
+When running this module from the command line, you can specify
+the numbers of tests that will be executed. By default, all
+examples are executed.
+
+Imports:
+    - from click import command, argument, IntRange - to provide a CLI
+        to this module
+    - from grayscale.shades import is_gray, to_gray - functions whose
+        examples of work are given
+
+Functions:
+    - is_gray_first_example() - the first example of the is_gray function
+    - is_gray_second_example() - the second example of the is_gray function
+    - to_gray_example() - example of the to_gray function
+    - main(numbers) - calls the selected examples to execute
+
+"""
 from click import command, argument, IntRange
 from grayscale.shades import is_gray, to_gray
 
 
 def is_gray_first_example():
-    """Summary."""
+    """Show the first example of the is_gray function."""
     print('\n' + '=' * 42)
     print("""print(is_gray('#F0F0F0'))
 print(is_gray('#808080'))
@@ -23,7 +46,7 @@ print(is_gray('#A9A9A9'))""")
 
 
 def is_gray_second_example():
-    """Summary."""
+    """Show the second example of the is_gray function."""
     print('\n' + '=' * 42)
     print("""print(is_gray('#FFFFFF'))
 print(is_gray('#000000'))
@@ -42,7 +65,7 @@ print(is_gray('#777787'))""")
 
 
 def to_gray_example():
-    """Summary."""
+    """Show an example of the to_gray function."""
     print('\n' + '=' * 42)
     print("""print(to_gray('#FFFFFF'))
 print(to_gray('#000000'))
@@ -67,7 +90,18 @@ print(to_gray('#A9A9A9'))""")
 @command()
 @argument('numbers', type=IntRange(0, 3), nargs=-1)
 def main(numbers: tuple[int]):
-    """Summary."""
+    """Allow you to select examples from the list below to execute.
+
+    Examples:
+        0. all examples
+        1. is_gray_first_example
+        2. is_gray_second_example
+        3. to_gray_example
+
+    Arguments:
+        - numbers: tuple[int] - example numbers for execution
+
+    """
     example_functions = {
         1: is_gray_first_example, 2: is_gray_second_example,
         3: to_gray_example

@@ -1,4 +1,9 @@
-"""Summary.
+"""doctests.
+
+Tests package module containing doctest tests.
+
+Imports:
+    - from doctest import testmod - to run tests
 
 >>> from grayscale.shades import is_gray
 >>> is_gray('#F0F0F0')
