@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GrayScale &#8212; GrayScale 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GrayScale-project" href="modules.html" />
+    <link rel="prev" title="Readme File" href="readme_link.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="GrayScale-project"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="readme_link.html" title="Readme File"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="readme_link.html" accesskey="U">Readme File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GrayScale</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="grayscale">
+<h1>GrayScale<a class="headerlink" href="#grayscale" title="Permalink to this headline">¶</a></h1>
+<p>GrayScale is a package written in Python and designed to work with
+<a class="reference external" href="https://en.wikipedia.org/wiki/Grey">shades of gray</a>, namely, it checks
+whether a color is a shade of gray and how many values need to be added
+to its components to make it so. The shades are taken from the
+<a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_model">RGB</a> palette,
+and the color codes are written in a 16-digit number system.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/python-%20%3E%3D%203.7-yellow" /><br />
+This package was written in Python versions at least 3.7, so in order to
+avoid errors and incorrect work requires Python &gt;= 3.7.</p>
+<p><img alt="" src="https://img.shields.io/badge/click-%3E%3D%208.0.0-blue" />
+<img alt="" src="https://img.shields.io/badge/pytest-%20%3E%3D%206.2.0-success" />
+<img alt="" src="https://img.shields.io/badge/coverage-%20%3E%3D%206.2-red" /><br />
+Together with the package will be installed and its dependencies:
+modules click &gt;= 8.0.0, pytest &gt;= 6.2.0 and coverage &gt;= 6.2.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The package can be installed with the following command in the console:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">grayscale</span>
+</pre></div>
+</div>
+<p>To remove the package, replace install with uninstall in the above command.</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The package contains one main module - shades, which contains the necessary
+functions for the implementation of the above functionality:</p>
+<ul>
+<li><p>is_gray - checks whether the specified color is a shade of gray<br />
+<em>For example</em>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">grayscale.shades</span> <span class="kn">import</span> <span class="n">is_gray</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#F0F0F0&#39;</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#808080&#39;</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#171717&#39;</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#231223&#39;</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_gray</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+</li>
+<li><p>to_gray - determines how much to add to the components of the specified
+color so that it becomes a shade of gray<br />
+<em>For example</em>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">grayscale.shades</span> <span class="kn">import</span> <span class="n">to_gray</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#F0F0F0&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#231223&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#424536&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">to_gray</span><span class="p">(</span><span class="s1">&#39;#000000&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Remark: the color codes are written in the 16-digit number system,
+while the to_gray function returns values in the 10-digit number system.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>In addition, the package can be launched from the console as an independent
+program using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grayscale</span>
+</pre></div>
+</div>
+<p>It is also possible to install flags -t (–test) and (or) -e (–example),
+which will launch tests and (or) examples respectively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grayscale</span> <span class="o">-</span><span class="n">t</span> <span class="o">-</span><span class="n">e</span>
+</pre></div>
+</div>
+<p>For more information, see the documentation of the modules and
+functions themselves.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/license-MIT-success" />
+This package is licensed in accordance with the MIT license - see details
+in the LICENSE.txt file.</p>
+</section>
+<section id="contact-information">
+<h2>Contact information<a class="headerlink" href="#contact-information" title="Permalink to this headline">¶</a></h2>
+<p>Author: Vyacheslav Velger<br />
+Email: vyvelger&#64;yandex.ru</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GrayScale</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#contact-information">Contact information</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="readme_link.html"
+                        title="previous chapter">Readme File</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="next chapter">GrayScale-project</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/README.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="GrayScale-project"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="readme_link.html" title="Readme File"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="readme_link.html" >Readme File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GrayScale</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vyacheslav.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+    </div>
+  </body>
+</html>

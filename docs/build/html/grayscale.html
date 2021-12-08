@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GrayScale &#8212; GrayScale 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tests" href="grayscale.tests.html" />
+    <link rel="prev" title="GrayScale-project" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="grayscale.tests.html" title="Tests"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="GrayScale-project"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">GrayScale-project</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GrayScale</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="grayscale">
+<h1>GrayScale<a class="headerlink" href="#grayscale" title="Permalink to this headline">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="grayscale.tests.html">Tests</a></li>
+</ul>
+</div>
+</section>
+<section id="module-grayscale">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grayscale" title="Permalink to this headline">¶</a></h2>
+<p>GrayScale package initialization module.</p>
+<p>The GrayScale package is designed to work with shades of gray, namely,
+it checks whether a color is a shade of gray and how many values need
+to be added to its components to make it so. The shades are taken from
+the RGB palette, and the color codes are written in a 16-digit number
+system.</p>
+<p>The package can be launched from the console as an independent program
+using the ‘grayscale’ command. It is also possible to set the
+-t (–test) and -e (–example) flags, which will start the execution
+of tests and examples of functions of the main module.</p>
+<p>For the correct operation of this package, the modules click, pytest and
+coverage are required. The first is necessary to provide a CLI for some
+modules of the package, the second is needed to run tests, the third is
+needed to check the code coverage with tests. In addition, the modules
+of this package import unittest module and functions from os, pathlib
+and doctest modules.</p>
+<p>Content:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Main modules:</dt><dd><ul class="simple">
+<li><p>__init__ - package initialization</p></li>
+<li><p>__main__ - ensuring the independent operation of the package</p></li>
+<li><p>shades - contains functions for working with shades of gray</p></li>
+</ul>
+</dd>
+<dt>Additional modules:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>grayscale_example - contains examples of the functions of the main</dt><dd><p>module (lies on the same level with the package)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Subpackages:</dt><dd><ul class="simple">
+<li><p>tests - a package of tests of the functions of the main module</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-grayscale.__main__">
+<span id="main"></span><h2>Main<a class="headerlink" href="#module-grayscale.__main__" title="Permalink to this headline">¶</a></h2>
+<p>__main__.</p>
+<p>The module of the GrayScale package, which provides independent
+operation of the package.</p>
+<p>By launching the module from the console, you can set the -t (–test)
+and -e (–example) flags, which will start the execution of tests and
+examples of functions of the main module.</p>
+<dl class="simple">
+<dt>Imports:</dt><dd><ul class="simple">
+<li><p>from pathlib import Path - to extract the path to the file</p></li>
+<li><p>from os import system - to start the execution of tests and examples</p></li>
+<li><dl class="simple">
+<dt>from click import command, option - providing CLI this module and the</dt><dd><p>possibility of installing flags</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>from grayscale.shades import is_gray, to_gray - functions that provide</dt><dd><p>the necessary functionality</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Functions:</dt><dd><ul class="simple">
+<li><p>main(test, example) - select a command to execute</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.__main__.main">
+<span class="sig-prename descclassname"><span class="pre">grayscale.__main__.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.__main__.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select a command to execute.</p>
+<dl class="simple">
+<dt>CLI:</dt><dd><ul class="simple">
+<li><p>Flag -t (–test)    indicates tests</p></li>
+<li><p>Flag -e (–example)    indicates examples</p></li>
+</ul>
+</dd>
+</dl>
+<p>When the flags are not set, it starts the program in standard mode,
+requests input from the user and tries to call the specified command.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><p>test: bool -  the flag argument for CLI (default False)</p></li>
+<li><p>example: bool -  the flag argument for CLI (default False)</p></li>
+</ul>
+</dd>
+<dt>Functions:</dt><dd><ul class="simple">
+<li><p>print_help() - outputs the command menu</p></li>
+<li><p>check_format(color) - checks whether the color matches the format</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.__main__.grayscale.__main__.main.print_help">
+<span class="sig-prename descclassname"><span class="pre">grayscale.__main__.main.</span></span><span class="sig-name descname"><span class="pre">print_help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#grayscale.__main__.grayscale.__main__.main.print_help" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the command menu.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.__main__.grayscale.__main__.main.check_format">
+<span class="sig-prename descclassname"><span class="pre">grayscale.__main__.main.</span></span><span class="sig-name descname"><span class="pre">check_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grayscale.__main__.grayscale.__main__.main.check_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the color matches the format.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-grayscale.shades">
+<span id="shades"></span><h2>Shades<a class="headerlink" href="#module-grayscale.shades" title="Permalink to this headline">¶</a></h2>
+<p>shades.</p>
+<p>The main module of the GrayScale package, containing
+functions for working with grayscale.</p>
+<dl class="simple">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><p>is_gray(hex) - grayscale check</p></li>
+<li><p>to_gray(hex) - casting to a shade of gray</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.shades.is_gray">
+<span class="sig-prename descclassname"><span class="pre">grayscale.shades.</span></span><span class="sig-name descname"><span class="pre">is_gray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#grayscale.shades.is_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if hex is a grayscale.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>hex: str - color code in the 16-digit number system, format:</dt><dd><p>#HHHHHH, where H is the digit of the 16-digit number system</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Returns True or False depending on the result.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="grayscale.shades.to_gray">
+<span class="sig-prename descclassname"><span class="pre">grayscale.shades.</span></span><span class="sig-name descname"><span class="pre">to_gray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#grayscale.shades.to_gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define the values to be added to hex.</p>
+<p>Determines which values need to be added to
+the hex components so that it becomes a shade of gray.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>hex: str - color code in the 16-digit number system, format:</dt><dd><p>#HHHHHH, where H is the digit of the 16-digit number system</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Returns a tuple of received values in the 10-digit number system.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GrayScale</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#module-grayscale">Module contents</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-grayscale.__main__">Main</a></li>
+<li><a class="reference internal" href="#module-grayscale.shades">Shades</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">GrayScale-project</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="grayscale.tests.html"
+                        title="next chapter">Tests</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/grayscale.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="grayscale.tests.html" title="Tests"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="GrayScale-project"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GrayScale 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >GrayScale-project</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">GrayScale</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vyacheslav.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
+    </div>
+  </body>
+</html>
